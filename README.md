@@ -1,2 +1,1 @@
-# Computer_Graphics_Project
-Section-A
+# Cg-Project-group-5
