@@ -1,0 +1,165 @@
+
+                                  /// It draws the sky
+void sky() { /// SUMYA
+    glBegin(GL_QUADS);              /// glBegin specifies the type of geometric object
+    glColor3ub(98, 154, 214);        /// such as GL_POINTS , GL_LINES , GL_QUADS ,
+
+    glVertex2f(-1.0f, -1.0f);       /// squad er vertex 4 ta thke
+    glVertex2f(1.0f, -1.0f);
+    glVertex2f(1.0f, 1.0f);
+    glVertex2f(-1.0f, 1.0f);
+
+    glEnd();                           ///The glBegin and glEnd functions delimit the vertices
+                                        ///that define a primitive or a group of like primitives
+}
+
+
+void nightSky() { ///SUMYA
+    glBegin(GL_QUADS);
+    glColor3ub(0, 0, 0);              ///color
+
+    glVertex2f(-1.0f, -1.0f);
+    glVertex2f(1.0f, -1.0f);
+    glVertex2f(1.0f, 1.0f);
+    glVertex2f(-1.0f, 1.0f);
+
+    glEnd();
+}
+
+
+void cloud() { /// SUMYA
+
+    glPushMatrix();        ///pushes the current matrix stack down by one, duplicating the current matrix.
+    glTranslatef(position,0.0,0.0);
+    int i;
+
+	GLfloat x=.5f; GLfloat y=.8f; GLfloat radius =.05f;
+	int triangleAmount = 20;
+	GLfloat twicePi = 2.0f * 3.1416;
+
+	glBegin(GL_TRIANGLE_FAN);      /// Gl_TRIANGLE_FAN can be used for drawing filled-in polygons
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(x + (radius * cos(i *  twicePi / triangleAmount)), ///vertex er angular value
+			       y + (radius * sin(i * twicePi / triangleAmount)));
+    }
+
+	glEnd();
+
+	GLfloat a=.55f; GLfloat b=.78f;
+
+	glBegin(GL_TRIANGLE_FAN);  ///fill kora
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(a + (radius * cos(i *  twicePi / triangleAmount)),
+                   b + (radius * sin(i * twicePi / triangleAmount)));
+    }
+
+	glEnd();
+
+	GLfloat c=.45f; GLfloat d=.78f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(c + (radius * cos(i *  twicePi / triangleAmount)),
+                   d + (radius * sin(i * twicePi / triangleAmount)));
+    }
+	glEnd();
+
+	GLfloat e=.52f; GLfloat f=.75f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(e + (radius * cos(i *  twicePi / triangleAmount)),
+                   f + (radius * sin(i * twicePi / triangleAmount)));
+    }
+
+	glEnd();
+
+	GLfloat g=.6f; GLfloat h=.77f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(g + (radius * cos(i *  twicePi / triangleAmount)),
+                   h + (radius * sin(i * twicePi / triangleAmount)));
+    }
+	glEnd();
+
+    glPopMatrix();  ///same as glEND glPopMatrix pops the top matrix off the stack.
+}
+
+void cloud2() ///SUMYA
+{
+    glPushMatrix();
+    glTranslatef(position,0.0,0.0);
+    int i;
+
+	GLfloat x=.5f; GLfloat y=.8f; GLfloat radius =.05f;
+	int triangleAmount = 20;
+	GLfloat twicePi = 2.0f * 3.1416;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(x + (radius * cos(i *  twicePi / triangleAmount)),
+			       y + (radius * sin(i * twicePi / triangleAmount)));
+    }
+
+	glEnd();
+
+	GLfloat a=.55f; GLfloat b=.78f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(a + (radius * cos(i *  twicePi / triangleAmount)),
+                   b + (radius * sin(i * twicePi / triangleAmount)));
+    }
+
+	glEnd();
+
+	GLfloat c=.45f; GLfloat d=.78f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(c + (radius * cos(i *  twicePi / triangleAmount)), ///for curve of cloud
+                   d + (radius * sin(i * twicePi / triangleAmount)));
+    }
+	glEnd();
+
+	GLfloat e=.52f; GLfloat f=.75f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(e + (radius * cos(i *  twicePi / triangleAmount)),
+                   f + (radius * sin(i * twicePi / triangleAmount)));
+    }
+
+	glEnd();
+
+	GLfloat g=.6f; GLfloat h=.77f;
+
+	glBegin(GL_TRIANGLE_FAN);
+    glColor3ub(230, 255, 255);
+
+    for(i = 0; i <= triangleAmount;i++) {
+        glVertex2f(g + (radius * cos(i *  twicePi / triangleAmount)),
+                   h + (radius * sin(i * twicePi / triangleAmount)));
+    }
+	glEnd();
+	glPopMatrix();
+}
